@@ -29,7 +29,7 @@ dependencies = [
   "pytorch",
   "torchvision",
   "pytorch-cuda=12.1",
-  "xarray=2025.1.2", # pinned due to regression, see #396
+  "xarray=2025.1.2",   # pinned due to regression, see #396
   # BioimageandCV
   "tifffile",
   "h5py",
@@ -127,8 +127,7 @@ filename = "plantseg/__version__.py"
 filename = "constructor/construct.yaml"
 
 [[tool.bumpversion.files]]
-filename = "conda-recipe/meta.yaml"
+filename = "constructor/construct.yaml" # second time for second version string
 
 [[tool.bumpversion.files]]
-filename = "pyproject.toml"
-
+filename = "conda-recipe/meta.yaml"

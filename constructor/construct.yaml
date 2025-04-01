@@ -5,7 +5,7 @@ channels:
   - conda-forge
 # environment_file: ../environment-dev.yaml
 specs:
-  - plantseg=2.0.0b4
+  - plantseg=2.0.0b3
   - console_shortcut # [win]
 license_file: ../LICENSE
 welcome_image: ../docs/logos/logo.png
