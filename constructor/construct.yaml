@@ -1,0 +1,16 @@
+name: PlantSeg
+version: "2.0.0b3"
+channels:
+  - file:///home/kriedmiller/software/miniforge3/conda-bld
+  - conda-forge
+# environment_file: ../environment-dev.yaml
+specs:
+  - plantseg=2.0.0b4
+  - console_shortcut # [win]
+license_file: ../LICENSE
+welcome_image: ../docs/logos/logo.png
+icon_image: ../Menu/logo.png
+register_python: false
+initialize_conda: false
+menu_packages:
+  - plantseg
