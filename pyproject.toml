@@ -4,17 +4,17 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "plantseg"
-version = "2.0.0b4"
+version = "2.0.0b3"
 authors = [
-  { name="Qin Yu", email="qin.yu@embl.de"},
-  { name="Lorenzo Cerrone", email="lorenzo.cerrone@uzh.ch"},
-  { name="Adrian Wolny"}
+  { name = "Qin Yu", email = "qin.yu@embl.de" },
+  { name = "Lorenzo Cerrone", email = "lorenzo.cerrone@uzh.ch" },
+  { name = "Adrian Wolny" },
 ]
 maintainers = [
-  { name="Kai Riedmiller", email="kai.riedmiller@iwr.uni-heidelberg.de"},
+  { name = "Kai Riedmiller", email = "kai.riedmiller@iwr.uni-heidelberg.de" },
 ]
 description = "Image segmentation software in 2D and 3D"
-readme="README.md"
+readme = "README.md"
 classifiers = [
   "Programming Language :: Python :: 3",
   "Operating System :: OS Independent",
@@ -29,7 +29,7 @@ dependencies = [
   "pytorch",
   "torchvision",
   "pytorch-cuda=12.1",
-  "xarray=2025.1.2",
+  "xarray=2025.1.2", # pinned due to regression, see #396
   # BioimageandCV
   "tifffile",
   "h5py",
@@ -48,7 +48,8 @@ dependencies = [
   "pyyaml",
   "pydantic>2,<2.10", #2.10causeproblemspec-bioimage-io/issues/663
 ]
-[dependency-groups]
+
+[project.optional-dependencies]
 dev = [
   "ruff",
   "pytest",
@@ -70,9 +71,11 @@ docs = [
 [project.urls]
 Homepage = "https://kreshuklab.github.io/plant-seg/"
 
-[project.script]
+[project.scripts]
 plantseg = "plantseg.run_plantseg:main"
 
+
+# Tools
 
 [tool.typos.default.extend-words]
 nd = "nd"       # N-dimensional (ND)
@@ -87,9 +90,6 @@ line-length = 120
 
 [tool.ruff.lint]
 extend-select = ["I"]
-
-[tool.ruff.format]
-quote-style = "preserve"
 
 [tool.bumpversion]
 current_version = "2.0.0b3"
@@ -122,3 +122,13 @@ values = ["a", "b", "rc", "stable"]
 
 [[tool.bumpversion.files]]
 filename = "plantseg/__version__.py"
+
+[[tool.bumpversion.files]]
+filename = "constructor/construct.yaml"
+
+[[tool.bumpversion.files]]
+filename = "conda-recipe/meta.yaml"
+
+[[tool.bumpversion.files]]
+filename = "pyproject.toml"
+
