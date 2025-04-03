@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft-07/schema",
   "$id": "https://schemas.conda.io/menuinst-1.schema.json",
-  "menu_name": "Science",
+  "menu_name": "plantseg",
   "menu_items": [
     {
       "name": "PlantSeg",

@@ -19,35 +19,9 @@ classifiers = [
   "Programming Language :: Python :: 3",
   "Operating System :: OS Independent",
 ]
-license = "MIT"
-license-files = ["LICEN[CS]E*"]
 requires-python = ">=3.10"
 
-dependencies = [
-  # Neural Network and GPU
-  "cudnn=9",
-  "pytorch",
-  "torchvision",
-  "pytorch-cuda=12.1",
-  "xarray=2025.1.2",   # pinned due to regression, see #396
-  # BioimageandCV
-  "tifffile",
-  "h5py",
-  "zarr",
-  "vigra",
-  "python-elf",
-  "python-graphviz",
-  "scikit-image",
-  "bioimageio.core>=0.6.5",
-  # GUI
-  "pyqt",
-  "napari",
-  # Other
-  "pip",
-  "requests",
-  "pyyaml",
-  "pydantic>2,<2.10", #2.10causeproblemspec-bioimage-io/issues/663
-]
+dependencies = []
 
 [project.optional-dependencies]
 dev = [

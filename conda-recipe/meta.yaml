@@ -24,7 +24,7 @@ requirements:
     - setuptools
 
   run:
-    - python >=3.9
+    - python >=3.10
     - pytorch >=1.7.0
     - tifffile
     - h5py
@@ -34,7 +34,7 @@ requirements:
     - python-graphviz
     - scikit-image
     - bioimageio.core >=0.6.5,<=0.7.0
-    - xarray<2025.3.0  # 2025.3.0 cause problem plant-seg/issues/396
+    - xarray<2025.3.0 # 2025.3.0 cause problem plant-seg/issues/396
     - napari
     - pyqt
     - requests

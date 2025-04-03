@@ -1,19 +1,18 @@
 # render with:
-# sed "s@/home/kriedmiller/software/miniforge3/conda-bld@$repo@" constructor/construct.yaml.template > constructor/construct.yaml
+# sed "s@%REPO%@${repo}@" constructor/construct.yaml.template > constructor/construct.yaml
 #
 name: PlantSeg
 version: "2.0.0b3"
 channels:
-  - file:///home/kriedmiller/software/miniforge3/conda-bld
+  - file://%REPO%
   - conda-forge
 specs:
   - plantseg=2.0.0b3
-  - menuinst
   - console_shortcut # [win]
 license_file: ../LICENSE
 welcome_image: ../docs/logos/logo.png
 icon_image: ../Menu/logo.png
 register_python: false
-initialize_conda: true
+initialize_conda: false
 menu_packages:
   - plantseg
