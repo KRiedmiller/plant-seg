@@ -18,6 +18,11 @@ on:
 jobs:
   release:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        # Conda requires a login shell in order to work properly
+        shell: bash -l {0}
+
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
@@ -49,11 +54,9 @@ jobs:
           conda-remove-defaults: true
 
       - name: List Conda Environments
-        shell: bash -l {0}
         run: conda info --envs
 
       - name: Run Tests with Pytest
-        shell: bash -l {0}
         run: |
           conda activate plant-seg-dev
           pytest -s --cov --cov-report=xml
