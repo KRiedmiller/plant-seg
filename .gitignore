@@ -5,6 +5,9 @@ plantseg.egg-info/
 dist/
 build/
 
+# Package
+installer/
+
 # Dev
 settings.json
 

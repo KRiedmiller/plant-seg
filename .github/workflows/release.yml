@@ -18,9 +18,49 @@ on:
 jobs:
   release:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        # Conda requires a login shell in order to work properly
+        shell: bash -l {0}
+
     steps:
-      - name: Checkout the code
+      - name: Checkout Repository
         uses: actions/checkout@v4
+
+      - name: Set Up Qt Libraries
+        uses: tlambert03/setup-qt-libs@v1
+
+      # Start X virtual framebuffer for GUI testing
+      - name: Start Xvfb
+        run: |
+          /sbin/start-stop-daemon --start --quiet --pidfile /tmp/custom_xvfb_99.pid \
+          --make-pidfile --background --exec /usr/bin/Xvfb -- :99 -screen 0 1920x1200x24 -ac +extension GLX
+
+      - name: Set PlantSeg Version
+        run: echo "RELEASE_VERSION=$(date +%Y%m%d%H%M%S)" >> $GITHUB_ENV
+
+      - name: Print PlantSeg Version
+        run: echo $RELEASE_VERSION
+
+      - name: Set Up Miniforge
+        uses: conda-incubator/setup-miniconda@v3
+        with:
+          python-version: 3.11
+          miniforge-version: latest
+          mamba-version: "*"
+          channels: local,conda-forge
+          environment-file: "environment-dev.yaml"
+          activate-environment: "plant-seg-dev"
+          conda-remove-defaults: true
+
+      - name: List Conda Environments
+        run: conda info --envs
+
+      - name: Run Tests with Pytest
+        run: |
+          conda activate plant-seg-dev
+          pytest -s --cov --cov-report=xml
+          conda deactivate
 
       - name: Bump version
         id: bump
@@ -43,3 +83,34 @@ jobs:
           name: ${{ steps.bump.outputs.current-version }}
           token: ${{ secrets.GITHUB_TOKEN }}
           make_latest: true
+
+      - name: conda build
+        run: |
+          tarball="$(conda build --output conda-recipe/)"
+          repo="$(dirname $(dirname "$tarball"))"
+          echo "Written conda package to: ${tarball}"
+
+      - name: create package
+        run: |
+          sed "s@%REPO%@${repo}@" constructor/construct.yaml.template > constructor/construct.yaml
+          conda create -n constructor constructor menuinst
+          conda activate constructor
+          constructor --output-dir installer constructor/
+          conda deactivate
+
+      - name: publish to heibox
+        run: |
+          for to_upload in installer/*.sh; do
+            echo "$to_upload"
+            uploadurl=$(curl --request GET \
+              --url 'https://heibox.uni-heidelberg.de/api/v2.1/via-repo-token/upload-link/?path=%2F&from=api&replace=1' \
+              --header 'accept: application/json' \
+              --header 'authorization: Bearer ${{ secrets.SEAFILE_API_TOKEN }}')
+            echo "${uploadurl}"
+            curl --request POST --url "${uploadurl//\"/}" \
+              --header 'accept: application/json' \
+              --header 'content-type: multipart/form-data' \
+              --form file="@${to_upload}" \
+              --form replace=1 \
+              --form parent_dir=/
+          done
