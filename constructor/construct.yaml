@@ -2,12 +2,12 @@
 # sed "s@/home/kriedmiller/software/miniforge3/conda-bld@${repo}@" constructor/construct.yaml.template > constructor/construct.yaml
 #
 name: PlantSeg
-version: "2.0.0b5"
+version: "2.0.0b6"
 channels:
   - file:///home/kriedmiller/software/miniforge3/conda-bld
   - conda-forge
 specs:
-  - plantseg=2.0.0b5
+  - plantseg=2.0.0b6
   - console_shortcut # [win]
 license_file: ../LICENSE
 welcome_image: ../docs/logos/logo.png
