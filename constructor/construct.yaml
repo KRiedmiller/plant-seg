@@ -1,12 +1,12 @@
 name: PlantSeg
-version: "2.0.0b10"
+version: "2.0.0b11"
 channels:
   # - file:///home/kriedmiller/software/miniforge3/conda-bld
   # - file:///home/runner/miniconda3/conda-bld # for github-action
   - file:///home/runner/miniconda3/envs/plant-seg-dev/conda-bld
   - conda-forge
 specs:
-  - plantseg=2.0.0b10
+  - plantseg=2.0.0b11
   - console_shortcut # [win]
 license_file: ../LICENSE
 welcome_image: ../docs/logos/logo.png
