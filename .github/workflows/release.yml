@@ -50,7 +50,7 @@ jobs:
           python-version: 3.11
           miniforge-version: latest
           mamba-version: "*"
-          channels: local,conda-forge
+          channels: conda-forge
           environment-file: "environment-dev.yaml"
           activate-environment: "plant-seg-dev"
           conda-remove-defaults: true
