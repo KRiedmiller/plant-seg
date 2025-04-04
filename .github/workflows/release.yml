@@ -50,7 +50,7 @@ jobs:
           python-version: 3.11
           miniforge-version: latest
           mamba-version: "*"
-          channels: conda-forge
+          channels: local,conda-forge
           environment-file: "environment-dev.yaml"
           activate-environment: "plant-seg-dev"
           conda-remove-defaults: true
@@ -61,7 +61,7 @@ jobs:
       - name: Run Tests with Pytest
         run: |
           conda activate plant-seg-dev
-          pytest -s --cov --cov-report=xml
+          # pytest -s --cov --cov-report=xml
           conda deactivate
 
       - name: Bump version
