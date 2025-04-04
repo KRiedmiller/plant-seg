@@ -25,9 +25,9 @@ dependencies:
   - bioimageio.core>=0.6.5,<=0.7.0
   - xarray<2025.3.0 # 2025.3.0 cause problem plant-seg/issues/396
   # GUI
-  # - pyside2
   - qtpy
-  - napari[qt]
+  - pyside2
+  - napari
   # Other
   - requests
   - pyyaml

@@ -35,8 +35,9 @@ requirements:
     - scikit-image
     - bioimageio.core >=0.6.5,<=0.7.0
     - xarray<2025.3.0 # 2025.3.0 cause problem plant-seg/issues/396
+    - qtpy
+    - pyside2
     - napari
-    - pyqt
     - requests
     - pyyaml
     - pydantic >2,<2.10 # 2.10 cause problem spec-bioimage-io/issues/663
