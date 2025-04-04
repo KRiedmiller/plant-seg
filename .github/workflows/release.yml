@@ -68,7 +68,7 @@ jobs:
         id: bump
         uses: callowayproject/bump-my-version@master
         with:
-          args: ${{ inputs.bump-type }}
+          args: "--verbose ${{ inputs.bump-type }}"
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Check version
