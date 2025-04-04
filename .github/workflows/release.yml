@@ -88,6 +88,8 @@ jobs:
 
       - name: conda build
         run: |
+          conda activate base
+          conda install conda-build
           tarball="$(conda build --output conda-recipe/)"
           repo="$(dirname $(dirname "$tarball"))"
           echo "Written conda package to: ${tarball}"
