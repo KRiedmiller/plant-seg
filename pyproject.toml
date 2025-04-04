@@ -94,14 +94,8 @@ filename = "plantseg/__version__.py"
 [[tool.bumpversion.files]]
 filename = "constructor/construct.yaml"
 
-# [[tool.bumpversion.files]]
-# filename = "constructor/construct.yaml" # second time for second version string
-
 [[tool.bumpversion.files]]
 filename = "constructor/construct.yaml.template"
-
-[[tool.bumpversion.files]]
-filename = "constructor/construct.yaml.template" # second time for second version string
 
 [[tool.bumpversion.files]]
 filename = "conda-recipe/meta.yaml"
