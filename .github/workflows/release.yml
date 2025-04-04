@@ -27,8 +27,10 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Set Up Qt Libraries
-        uses: tlambert03/setup-qt-libs@v1
+      # - name: Set Up Qt Libraries
+      #   uses: tlambert03/setup-qt-libs@v1
+      - name: Install Qt
+        uses: jurplel/install-qt-action@v4
 
       # Start X virtual framebuffer for GUI testing
       - name: Start Xvfb

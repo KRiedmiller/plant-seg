@@ -17,6 +17,7 @@ docs/_build/
 
 # Codecov
 .coverage
+coverage.xml
 
 # macOS
 .DS_Store
