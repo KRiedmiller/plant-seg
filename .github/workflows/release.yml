@@ -88,15 +88,14 @@ jobs:
 
       - name: conda build
         run: |
-          conda activate base
-          conda install conda-build
+          conda activate plant-seg-dev
+          conda install conda-build constructor menuinst
           conda build conda-recipe/
+          conda deactivate
 
       - name: create package
         run: |
-          # sed "s@%REPO%@${repo}@" constructor/construct.yaml.template > constructor/construct.yaml
-          conda create -n constructor constructor menuinst
-          conda activate constructor
+          conda activate plant-seg-dev
           constructor --output-dir installer constructor/
           conda deactivate
 
