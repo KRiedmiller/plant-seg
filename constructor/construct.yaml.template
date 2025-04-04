@@ -13,6 +13,6 @@ license_file: ../LICENSE
 welcome_image: ../docs/logos/logo.png
 icon_image: ../Menu/logo.png
 register_python: false
-initialize_conda: false
+initialize_conda: true
 menu_packages:
   - plantseg
