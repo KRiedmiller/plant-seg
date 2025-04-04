@@ -96,7 +96,7 @@ jobs:
 
       - name: create package
         run: |
-          sed "s@%REPO%@${repo}@" constructor/construct.yaml.template > constructor/construct.yaml
+          # sed "s@%REPO%@${repo}@" constructor/construct.yaml.template > constructor/construct.yaml
           conda create -n constructor constructor menuinst
           conda activate constructor
           constructor --output-dir installer constructor/
