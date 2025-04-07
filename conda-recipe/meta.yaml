@@ -26,6 +26,8 @@ requirements:
   run:
     - python >=3.10
     - pytorch >=1.7.0
+    - cudnn =9
+    - pytorch-cuda=12.1
     - tifffile
     - h5py
     - zarr
