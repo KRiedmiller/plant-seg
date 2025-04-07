@@ -51,7 +51,7 @@ jobs:
           miniforge-version: latest
           mamba-version: "*"
           channels: conda-forge
-          environment-file: "environment-dev.yaml"
+          # environment-file: "environment-dev.yaml"
           activate-environment: "plant-seg-dev"
           conda-remove-defaults: true
 
