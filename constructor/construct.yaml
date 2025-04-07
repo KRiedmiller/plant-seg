@@ -7,7 +7,7 @@ channels:
 specs:
   - plantseg=2.0.0b13
   - console_shortcut # [win]
-license_file: ../LICENSE
+license_file: ../gpl.txt
 welcome_image: ../docs/logos/logo.png
 icon_image: ../Menu/logo.png
 register_python: false

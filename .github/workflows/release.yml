@@ -79,7 +79,6 @@ jobs:
           miniforge-version: latest
           mamba-version: "*"
           channels: conda-forge
-          activate-environment: "base"
           conda-remove-defaults: true
 
       - name: List Conda Environments
