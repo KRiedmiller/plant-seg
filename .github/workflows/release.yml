@@ -78,7 +78,7 @@ jobs:
           python-version: 3.11
           miniforge-version: latest
           mamba-version: "*"
-          channels: conda-forge, nvidia, pytorch
+          channels: nvidia, pytorch, conda-forge
           conda-remove-defaults: true
 
       - name: List Conda Environments
@@ -109,7 +109,7 @@ jobs:
         run: |
           conda activate base
           conda install conda-build
-          conda build conda-recipe/
+          conda build conda-recipe/ -c pytorch -c nvidia -c conda-forge
           conda deactivate
 
       - name: create package
