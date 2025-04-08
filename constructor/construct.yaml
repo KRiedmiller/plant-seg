@@ -5,9 +5,9 @@ channels:
   - file:///home/ubuntu_runner/miniconda3/envs/builder/conda-bld
   # - file:///home/runner/miniconda3/conda-bld # for github-action
   # - file:///home/runner/miniconda3/envs/builder/conda-bld # for github-action
-  - pytorch
-  - nvidia
   - conda-forge
+  # - nvidia
+  # - pytorch
 specs:
   - plantseg=2.0.0b25
   - console_shortcut # [win]

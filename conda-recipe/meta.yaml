@@ -25,9 +25,6 @@ requirements:
 
   run:
     - python >=3.11
-    - libtorch
-    - pytorch
-    - pytorch-cpu
     - pytorch-gpu
     # - pytorch-cuda=12.1
     - tifffile
