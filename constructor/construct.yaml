@@ -10,6 +10,8 @@ channels:
 specs:
   - plantseg=2.0.0b18
   - console_shortcut # [win]
+exclude:
+  - readline
 license_file: ../gpl.txt
 welcome_image: ../docs/logos/logo.png
 icon_image: ../Menu/logo.png
