@@ -25,7 +25,9 @@ requirements:
 
   run:
     - python >=3.11
-    - pytorch-gpu
+    - pytorch
+    - torchvision
+    - cudnn =9
     # - pytorch-cuda=12.1
     - tifffile
     - h5py
