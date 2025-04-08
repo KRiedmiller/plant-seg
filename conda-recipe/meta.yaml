@@ -24,11 +24,12 @@ requirements:
     - setuptools
 
   run:
-    - python >=3.11
+    - python
+    - pip
+    - cudnn =9
     - pytorch
     - torchvision
-    - cudnn =9
-    # - pytorch-cuda=12.1
+    - pytorch-cuda=12.1
     - tifffile
     - h5py
     - zarr
@@ -44,7 +45,7 @@ requirements:
     - requests
     - pyyaml
     - pydantic >2,<2.10 # 2.10 cause problem spec-bioimage-io/issues/663
-    - xarray =2025.1.2
+    - xarray <2025.3.0
 
 test:
   imports:
