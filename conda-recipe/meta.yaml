@@ -25,7 +25,7 @@ requirements:
 
   run:
     - python >=3.10
-    - pytorch::pytorch >=1.7.0
+    - pytorch-gpu >=1.7.0
     - cudnn =9
     - cudatoolkit
     - pytorch-cuda=12.1
