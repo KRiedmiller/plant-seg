@@ -110,7 +110,7 @@ jobs:
         run: |
           conda create -n builder conda-build
           conda activate builder
-          conda build -c pytorch -c nvidia -c conda-forge conda-recipe/
+          conda build -c pytorch -c nvidia conda-recipe/
           conda deactivate
 
       - name: create package
