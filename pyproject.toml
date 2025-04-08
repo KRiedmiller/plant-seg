@@ -83,6 +83,10 @@ commit = true
 allow_dirty = false
 commit_args = "--no-verify"
 message = "ci(bump-my-version): {current_version} → {new_version}"
+setup_hooks = [
+  "git config --global user.email \"bump-my-version@github.actions\"",
+  "git config --global user.name \"bump-my-version\"",
+]
 
 [tool.bumpversion.parts.pre_label]
 optional_value = "stable"
