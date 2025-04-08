@@ -1,5 +1,5 @@
 name: PlantSeg
-version: "2.0.0b26"
+version: "2.0.0b27"
 channels:
   # - file:///home/kriedmiller/software/miniforge3/envs/builder/conda-bld
   - file:///home/ubuntu_runner/miniconda3/envs/builder/conda-bld
@@ -9,7 +9,7 @@ channels:
   # - nvidia
   # - pytorch
 specs:
-  - plantseg=2.0.0b26
+  - plantseg=2.0.0b27
   - console_shortcut # [win]
 exclude:
   - readline
