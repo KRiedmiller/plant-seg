@@ -1,5 +1,5 @@
 name: PlantSeg
-version: "2.0.0b18"
+version: "2.0.0b19"
 channels:
   # - file:///home/kriedmiller/software/miniforge3/conda-bld
   # - file:///home/runner/miniconda3/conda-bld # for github-action
@@ -8,7 +8,7 @@ channels:
   - nvidia
   - conda-forge
 specs:
-  - plantseg=2.0.0b18
+  - plantseg=2.0.0b19
   - console_shortcut # [win]
 exclude:
   - readline
