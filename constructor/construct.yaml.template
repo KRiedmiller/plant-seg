@@ -2,12 +2,12 @@
 # sed "s@%REPO%@${repo}@" constructor/construct.yaml.template > constructor/construct.yaml
 #
 name: PlantSeg
-version: "2.0.0b22"
+version: "2.0.0b23"
 channels:
   - file://%REPO%
   - conda-forge
 specs:
-  - plantseg=2.0.0b22
+  - plantseg=2.0.0b23
   - console_shortcut # [win]
 license_file: ../LICENSE
 welcome_image: ../docs/logos/logo.png
