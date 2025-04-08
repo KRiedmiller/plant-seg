@@ -1,9 +1,9 @@
 name: PlantSeg
 version: "2.0.0b19"
 channels:
-  # - file:///home/kriedmiller/software/miniforge3/conda-bld
+  - file:///home/kriedmiller/software/miniforge3/envs/builder/conda-bld
   # - file:///home/runner/miniconda3/conda-bld # for github-action
-  - file:///home/runner/miniconda3/envs/builder/conda-bld # for github-action
+  # - file:///home/runner/miniconda3/envs/builder/conda-bld # for github-action
   - pytorch
   - nvidia
   - conda-forge
