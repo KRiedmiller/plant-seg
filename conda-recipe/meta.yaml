@@ -24,9 +24,12 @@ requirements:
     - setuptools
 
   run:
-    - python >=3.10
-    - pytorch-gpu >=1.7.0
-    - pytorch-cuda=12.1
+    - python >=3.11
+    - libtorch
+    - pytorch
+    - pytorch-cpu
+    - pytorch-gpu
+    # - pytorch-cuda=12.1
     - tifffile
     - h5py
     - zarr
