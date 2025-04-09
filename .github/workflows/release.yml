@@ -74,7 +74,7 @@ jobs:
       - name: install git
         run: |
           apt-get update
-          apt-get install git
+          apt-get install -y git
 
       - name: Checkout Repository
         uses: actions/checkout@v4
