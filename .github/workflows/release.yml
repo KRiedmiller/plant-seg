@@ -73,7 +73,8 @@ jobs:
     steps:
       - name: install git
         run: |
-          apt install git
+          apt-get update
+          apt-get install git
 
       - name: Checkout Repository
         uses: actions/checkout@v4
