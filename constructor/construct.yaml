@@ -1,5 +1,5 @@
 name: PlantSeg
-version: "2.0.0b38"
+version: "2.0.0b39"
 channels:
   # - file:///home/kriedmiller/software/miniforge3/conda-bld
   - file:///home/ubuntu_runner/miniconda3/envs/builder/conda-bld
@@ -10,7 +10,7 @@ channels:
   # - nvidia
   - conda-forge
 specs:
-  - plantseg=2.0.0b38
+  - plantseg=2.0.0b39
   - console_shortcut # [win]
 virtual_specs:
   - __cuda
