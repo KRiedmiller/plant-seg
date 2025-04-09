@@ -59,7 +59,7 @@ jobs:
           conda deactivate
 
   release:
-    # needs: test
+    needs: test
     # runs-on: ubuntu-latest
     runs-on: self-hosted
     defaults:
