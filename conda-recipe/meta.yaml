@@ -1,6 +1,6 @@
 package:
   name: plantseg
-  version: "2.0.0b35"
+  version: "2.0.0b36"
 
 source:
   path: ..
