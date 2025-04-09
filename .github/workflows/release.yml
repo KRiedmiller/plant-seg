@@ -74,7 +74,7 @@ jobs:
       - name: install git
         run: |
           apt-get update
-          apt-get install -y git lsb_release
+          apt-get install -y git lsb-release
 
       - name: Checkout Repository
         uses: actions/checkout@v4
