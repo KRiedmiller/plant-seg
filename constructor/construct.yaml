@@ -6,7 +6,7 @@ channels:
   # - file:///home/runner/miniconda3/conda-bld # for github-action
   - file:///home/runner/miniconda3/envs/builder/conda-bld # for github-action
   # - pytorch
-  - nvidia
+  # - nvidia
   - conda-forge
 specs:
   - plantseg=2.0.0b34

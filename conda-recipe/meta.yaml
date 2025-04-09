@@ -26,8 +26,8 @@ requirements:
   run:
     - python
     - pip
-    - cudnn =9
-    - cudatoolkit
+    # - cudnn
+    # - cudatoolkit
     - pytorch-gpu
     # - torchvision
     # - pytorch-cuda=12.1
