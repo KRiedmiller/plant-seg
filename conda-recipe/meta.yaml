@@ -27,9 +27,10 @@ requirements:
     - python
     - pip
     - cudnn =9
-    - pytorch
+    - cudatoolkit
+    - pytorch-gpu
     - torchvision
-    - pytorch-cuda=12.1
+    # - pytorch-cuda=12.1
     - tifffile
     - h5py
     - zarr
