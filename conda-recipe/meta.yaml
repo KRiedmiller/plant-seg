@@ -29,7 +29,7 @@ requirements:
     - cudnn =9
     - cudatoolkit
     - pytorch-gpu
-    - torchvision
+    # - torchvision
     # - pytorch-cuda=12.1
     - tifffile
     - h5py
