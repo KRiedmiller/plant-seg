@@ -24,7 +24,7 @@ requirements:
     - setuptools
 
   run:
-    - python
+    - python>=3.11
     - pip
     # - cudnn
     # - cudatoolkit
