@@ -52,8 +52,8 @@ AGGLOMERATION_MODES = [
         "label": "Agglomeration mode",
         "choices": AGGLOMERATION_MODES,
         "tooltip": "Select which agglomeration algorithm to use.",
-        "widget_type": "RadioButtons",
-        "orientation": "horizontal",
+        "widget_type": "ComboBox",
+        # "orientation": "horizontal",
     },
     beta={
         "label": "Under/Over segmentation factor",
@@ -112,6 +112,9 @@ def widget_agglomeration(
         },
         widgets_to_update=widgets_to_update,
     )
+
+
+widget_agglomeration.nuclei.hide()
 
 
 @widget_agglomeration.mode.changed.connect
