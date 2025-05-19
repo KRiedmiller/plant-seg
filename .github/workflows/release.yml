@@ -18,6 +18,9 @@ on:
 jobs:
   test-and-build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
     defaults:
       run:
         # Conda requires a login shell in order to work properly
@@ -63,7 +66,7 @@ jobs:
         uses: callowayproject/bump-my-version@master
         with:
           args: "--verbose ${{ inputs.bump-type }}"
-          github-token: ${{ secrets.RELEASE_BUMP_MY_VERSION_PAT }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Check version
         if: steps.bump.outputs.bumped == 'true'
